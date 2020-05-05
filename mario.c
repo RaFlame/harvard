@@ -2,6 +2,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int get_positive_int(void);
 // Here i choose the data type 
 int main(void)
 
@@ -25,10 +26,11 @@ int main(void)
         for (j = 0; j <= i; j++)
         {
             printf("#");
+            
         
         }
-        
         printf("\n");
+        
     }
 }
     
