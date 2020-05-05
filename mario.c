@@ -15,15 +15,15 @@ int main(void)
     {
         for(k = 7; k >= j; k--)
         
-            printf(" ");
+            printf(" \n");
         
         for(j = 0; j <= i; j++)
         {
-            printf("#");
+            printf("#\n");
         
         }
         
-        printf("\n");
+        
     }
 }
     
