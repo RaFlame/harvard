@@ -13,7 +13,7 @@ int main(void)
     while (n < 1 || n > 8);
     for(i = 0; i < n; i++)
     {
-        for(k = 7; k > j; k--)
+        for(k = 7; k >= j; k--)
         
             printf(" ");
         
@@ -25,7 +25,6 @@ int main(void)
         
         printf("\n");
     }
-    return 0;
 }
     
 
