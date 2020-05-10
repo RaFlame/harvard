@@ -13,7 +13,7 @@ int main(void)
 
 // prompt the user with the question
 
-    string article = get_string("Text: ");
+    string article = get_string("What's the article?: ");
 
 // set the length of article
 
@@ -26,11 +26,6 @@ int main(void)
         word = 1;
     }
 
-
-
-// calculate Coleman-Liau index
-
-    int grade = 0.0588 * (100 * letter / word) - 0.296 * (100 * sentence / word) - 15.8;
 // count words
 
     for (int i = 0; i < n;  i++)
@@ -56,24 +51,27 @@ int main(void)
             sentence++;
         }
 
-    }    
+    }
+
+// calculate Coleman-Liau index
+
+    int grade = 0.0588 * (100 * letter / word) - 0.296 * (100 * sentence / word) - 15.8;
+
+// debugger
+
+    printf("Letters: %i\n Words: %i\n Sentences: %i\n", letter, word, sentence);
+
 // print result
     if (grade <= 1)
     {
-        printf("Grade\n");
+        printf("Before Grade 1\n");
     }
-    else if (grade < 100)
+    else if (grade < 16)
     {
         printf("Grade %i\n", grade);
     }
     else
     {
         printf("Grade 16+\n");
-        
     }
-// debugger
-
-    printf("Letters: %i\n Words: %i\n Sentences: %i\n", letter, word, sentence);
-
-
 }
