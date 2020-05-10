@@ -62,11 +62,11 @@ int main(void)
     printf("Letters: %i\n Words: %i\n Sentences: %i\n", letter, word, sentence);
 
 // print result
-    if (grade <= 1)
+    if 
     {
         printf("Before Grade 1\n");
     }
-    else if (grade < 16)
+    else if 
     {
         printf("Grade %i\n", grade);
     }
