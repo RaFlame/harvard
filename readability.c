@@ -60,7 +60,7 @@ int main(void)
 // print result
     if (grade <= 1)
     {
-        printf("Before Grade 1\n");
+        printf("Grade\n");
     }
     else if (grade < 100)
     {
