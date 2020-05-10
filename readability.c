@@ -21,8 +21,16 @@ int main(void)
 
 // add +1 if the article starts with alphanumeric letter
 
-    
+    if (isalnum(article[0]))
+    {
+        word = 1;
+    }
 
+
+
+// calculate Coleman-Liau index
+
+    int grade = 0.0588 * (100 * letter / word) - 0.296 * (100 * sentence / word) - 15.8;
 // count words
 
     for (int i = 0; i < n;  i++)
@@ -48,12 +56,7 @@ int main(void)
             sentence++;
         }
 
-    }
-
-// calculate Coleman-Liau index
-
-    int grade = 0.0588 * (100 * letter / word) - 0.296 * (100 * sentence / word) - 15.8;
-    
+    }    
 // print result
     if (grade <= 1)
     {
