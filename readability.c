@@ -2,6 +2,7 @@
 #include <cs50.h>
 #include <ctype.h>
 #include <string.h>
+#include <math.h>
 
 int letter;
 int word;
@@ -13,65 +14,27 @@ int main(void)
 
 // prompt the user with the question
 
-    string article = get_string("What's the article?: ");
-
-// set the length of article
-
-    int n = strlen(article);
-
-// add +1 if the article starts with alphanumeric letter
-
-    if (isalnum(article[0]))
+    string s = get_string("Text: ");
+    int num_words, num_sentences, num_letters;
+    num_words = num_sentences = num_letters = 0;
+    for (int i = 0, len = strlen(s); i < len; i++)
     {
-        word = 1;
+        if (isalpha(s[i]))
+            num_letters++;
+        if ((i == 0 && s[i] != ' ') 
+        || (i != len - 1 && s[i] == ' ' && s[i+ 1] != ' '))
+            num_words++;
+        if (s[i] == '.' || s[i] == '?' || s[i] == '!')
+            num_sentences++;
     }
-
-// count words
-
-    for (int i = 0; i < n;  i++)
-    {
-        // count letters
-
-        if (isalnum(article[i]))
-        {
-            letter++;
-        }
-
-        // count words
-
-        if (i < n - 1 && isspace(article[i]) && isalnum(article[i + 1]))
-        {
-            word++;
-        }
-
-        // count sentences
-
-        if (i > 0 && (article[i] == '!' || article[i] == '?' || article[i] == '.') && isalnum(article[i - 1]))
-        {
-            sentence++;
-        }
-
-    }
-
-// calculate Coleman-Liau index
-
-    int grade = 0.0588 * (100 * letter / word) - 0.296 * (100 * sentence / word) - 15.8;
-
-// debugger
-
-    printf("Letters: %i\n Words: %i\n Sentences: %i\n", letter, word, sentence);
-
-// print result
-    if (grade <= 1)
-    {
+    float L = (num_letters / (float) num_words) * 100;
+    float S = (num_sentences / (float) num_words) * 100;
+    int index = round(0.0588 * L - 0.296 * S - 15.8);
+    if (index < 1)
         printf("Before Grade 1\n");
-    }
-    else if (grade < 16)
-    {
-        printf("Grade %i\n", grade);
-    }
-    else
-    {
+    else if (index >= 16)
         printf("Grade 16+\n");
-    }
+    else 
+        printf("Grade %i\n", index);
+
 }
