@@ -12,7 +12,18 @@ int main(int argc, string argv[])
     if (argc == 2 && isdigit(*argv[1]))
         
     {
+// chech for non-numeric key
+int len_of_argv = strlen(argv[1]);
 
+for (int i = 0; i < len_of_argv; i ++)
+{
+    int restz = isalpha(argv[1][i]);
+    if (restz != 0)
+    {
+        printf("Usage: ./caesar key \n");
+        return 1;
+    }
+}
         int k = atoi(argv[1]); // get the ceasar KEY value convert into integar
 
         string s = get_string("plaintext: "); // get text
