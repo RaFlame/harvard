@@ -8,7 +8,7 @@ int main(int argc, string argv[])
 {
 
 
-// check there is only 1 arguments and it is a number else returns instructions
+// check that there is a number in the argument
     if (argc == 2 && isdigit(*argv[1]))
         
     {
@@ -29,14 +29,14 @@ int main(int argc, string argv[])
         string s = get_string("plaintext: "); // get text
         printf("ciphertext: "); // print out cipher
 
-// iterate through plain text letter by letter
+//going through text letter by letter
         for (int i = 0, n = strlen(s) ; i < n; i++)
         {
-            // checking if it is lowercase 97 = a to 112 = z and if it + 13 characters along.
+// checking lowercase 97 = a to 112 = z and checking if it is + 13 characters along.
             if (s[i] >= 'a' && s[i] <= 'z')
             {
                 printf("%c", (((s[i] - 'a') + k) % 26) + 'a'); // print out lowercase with key
-            } // if it it between uppercase A and C
+            } // is it between uppercase A and C
             else if (s[i] >= 'A' && s[i] <= 'Z')
             {
                 printf("%c", (((s[i] - 'A') + k) % 26) + 'A'); // print out uppercase with key
