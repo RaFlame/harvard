@@ -130,7 +130,9 @@ int get_index(string name)
 {
     for (int i = 0; i < candidate_count; i++)
         if (strcmp(candidates[i].name, name) == 0)
+        {
             return i;
+        }
     return -1;
 }
 // Record preference if vote is valid
@@ -156,10 +158,10 @@ void tabulate(void)
         {
             int candidate_index = preferences[i][j];
             if (!candidates[candidate_index].eliminated)
-                {
-                    candidates[candidate_index].votes++;
-                    break;
-                }
+            {
+                candidates[candidate_index].votes++;
+                break;
+            }
         }
     }
 }
@@ -181,7 +183,7 @@ bool print_winner(void)
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
 {
-// 
+//
     int min = 0;
     bool have_found_first = false;
     for (int i = 0; i < candidate_count; i++)
@@ -210,7 +212,9 @@ bool is_tie(int min)
     {
         if (!candidates[i].eliminated)
             if (candidates[i].votes != min)
+            {
                 return false;
+            }
     }
     return true;
 }
@@ -224,7 +228,10 @@ void eliminate(int min)
         if (!candidates[i].eliminated)
         {
             if (candidates[i].votes == min)
+            {
                 candidates[i].eliminated = true;
+            }
+
         }
     }
 }
