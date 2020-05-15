@@ -55,7 +55,7 @@ int main(int argc, string argv[])
         candidates[i].votes = 0;
         candidates[i].eliminated = false;
     }
-
+    //Figure out number of voters
     voter_count = get_int("Number of voters: ");
     if (voter_count > MAX_VOTERS)
     {
@@ -63,7 +63,7 @@ int main(int argc, string argv[])
         return 3;
     }
 
-    // Keep querying for votes
+    // Keep querying for votes and take inn the rank
     for (int i = 0; i < voter_count; i++)
     {
 
@@ -169,7 +169,7 @@ bool print_winner(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes < (voter_count / 2))
+        if (candidates[i].votes > (voter_count / 2))
         {
             printf("%s\n", candidates[i].name);
             return true;
