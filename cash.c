@@ -4,13 +4,16 @@
 
 int main(void)
 {
+    //Set datatype to float to handle dollars and cents
     float dollars;
     do
     {
+        //We get the dollar amount from the user until you get a valid input, inluding negative amount
         dollars = get_float("Change owed: ");
-    }while (dollars < 0);
+    }
+    while (dollars < 0);
     
-    
+    // rounding the cents to the nearest penny using the math library
     int cents = round(dollars * 100);
     int coins = 0;
     
