@@ -36,6 +36,7 @@ bool check(const char *word)
 
     while (trav != NULL)
     {
+//compare the strings irrespective of the case of characters
         if ((strcasecmp(word, trav->word)) == 0)
         {
             return true;
