@@ -4,11 +4,6 @@
 #include <string.h>
 #include <math.h>
 
-int letter;
-int word;
-int sentence;
-
-
 int main(void)
 {
 
