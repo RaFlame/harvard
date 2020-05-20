@@ -1,1 +1,3 @@
-SELECT movies.title, movies.year FROM movies WHERE year = 2008
+SELECT movies.title
+FROM movies 
+WHERE year = 2008

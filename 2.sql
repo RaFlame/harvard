@@ -1,1 +1,3 @@
-SELECT * FROM "people" WHERE "name" LIKE 'emma stone'
+SELECT "birth"
+FROM "people" 
+WHERE "name" LIKE 'Emma Stone'
