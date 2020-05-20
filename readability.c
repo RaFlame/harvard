@@ -35,6 +35,7 @@ int main(void)
         {
             num_sentences++;
         }
+    }
 //set up the coleman-liau index formula
         float L = (num_letters / (float) num_words) * 100;
         float S = (num_sentences / (float) num_words) * 100;
@@ -58,4 +59,3 @@ int main(void)
             printf("Grade %i\n", index);
         }
     }
-}
