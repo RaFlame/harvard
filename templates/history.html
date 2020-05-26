@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table id="data" align="center" border="1" frame="border">
+    <tr>
+        <th>Stock</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Date</th>
+    </tr>
+
+    {% for rows in data %}
+    <tr>
+        <td>{{rows.get("symbol")}}</td>
+        <td>{{rows.get("quantity")}}</td>
+        <td>{{rows.get("price") | usd}}</td>
+        <td>{{rows.get("date")}}</td>
+    </tr>
+    {% endfor %}
+
+{% endblock %}
