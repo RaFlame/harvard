@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<main class="container p-3">
+    <table id="username" align="center" border="1" frame="border">
+        <tr>
+            <th> You are logged in as </th>
+            <td>{{ username }} </td>
+        </tr>
+    </table>
+</main>
+<table id="data" align="center" border="1" frame="border">
+        <tr>
+            <th>STOCK</th>
+            <th>QUANTITY</th>
+            <th>ACTUAL PRICE</th>
+            <th>TOTAL VALUE</th>
+            <th>SELL</th>
+            <th>BUY</th>
+        </tr>
+<!-- HERE THERE WILL BE A FOR LOOP IN ORDER TO INSERT THE DATA INTO THE TABLE -->
+        {% for rows in user_stocks %}
+        {% if rows.get("SUM(quantity)") > 0 %}
+        <tr>
+            <td>{{ rows.get("symbol") }}</td>
+            <td>{{ rows.get("SUM(quantity)") }}</td>
+            <td>{{ rows.get("price") | usd }}</td>
+            <td>{{ rows.get("value") | usd }}</td>
+            <td>
+            <div style="margin-top:1%;margin-bottom:1%;">
+            <form action="/sell" id="form" method="post">
+            <input name="symbol" value="{{ rows.get("symbol") }}" type="hidden">
+            <input onkeyup="checkValidity()" name="shares" pattern="/[0-9]/" type="number" min="0" max="{{ rows.get("SUM(quantity)") }}" style="width:25%;">
+            <button class="btn btn-primary" type="submit" style="color: black;border-color: #e2aa43;background-color: #e2aa43;">Sell</button>
+            </td>
+            <td>
+            <div style="margin-top:1%;margin-bottom:1%;">
+            </form>
+            <form action="/buy" id="form" method="post">
+            <input name="symbol" value="{{ rows.get("symbol") }}" type="hidden">
+            <input onkeyup="checkValidity()" name="shares" pattern="/[0-9]/" type="number" min="0" style="width:25%;">
+            <button class="btn btn-primary" type="submit" style="color: black;border-color: #88e69d; background-color: #88e69d">Buy</button>
+            </form>
+            </div>
+            </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+</table>
+<table id="money" align="center" border="1" frame="border">
+        <tr>
+            <th>TOTAL CASH</th>
+            <th>TOTAL NET WORTH</th>
+        </tr>
+        <tr>
+            <td>{{ user_cash | usd }}</td>
+            <td>{{ total_net_worth | usd }}</td>
+        </tr>
+</table>
+
+<div  style="margin-top: 2%;">
+    <form action="/" method="post" id="form" name="cash" onsubmit="checkCash()" novalidate>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="newcash" placeholder="Add more cash" type="text" onkeyup="checkCash()" required>
+            <button id="button" class="btn btn-primary" type="submit">Add</button>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Sorry, only numbers accepted</div>
+        </div>
+    </form>
+</div>
+<script>
+
+document.getElementById("button").disabled = true;
+
+function checkCash(){
+
+    var numre = /[0-9]/;
+    var letters = /[a-zA-Z]/;
+    var cash = document.forms["cash"]["newcash"];
+    cash.classList.remove("is-invalid");
+    document.getElementById("button").disabled = true;
+    if (cash.value.length > 0) {
+        if(!numre.test(cash.value) || letters.test(cash.value)) {
+            cash.classList.add("is-invalid");
+            document.getElementById("button").disabled = true;
+        }
+         else{
+        document.getElementById("button").disabled = false;
+        }
+    }
+}
+
+</script>
+
+{% endblock %}
+
+
