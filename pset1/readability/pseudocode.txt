@@ -1,2 +1,0 @@
-1. Write a program called readability that takes a text and determines its reading level
-2. Use Coleman-Liau index formula: index = 0.0588 * L - 0.296 * S - 15.8

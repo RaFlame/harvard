@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="en-us">
+<!-- Mirrored from cs50.harvard.edu/web/2018/notes/0/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 May 2020 07:07:59 GMT -->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="This course picks up where Harvard University's CS50 leaves off, diving more deeply into the design and implementation of web apps with Python, JavaScript, and SQL using frameworks like Flask, Django, and Bootstrap. Topics include database design, scalability, security, and user experience. Through hands-on projects, students learn to write and use APIs, create interactive UIs, and leverage cloud services like GitHub and Heroku. By semester's end, students emerge with knowledge and experience in principles, languages, and tools that empower them to design and deploy applications on the Internet.">
+
+<meta property="og:image" content="../../../../../img.youtube.com/vi/24Kf3v7kZyE/maxresdefault.jpg"><meta property="og:title" content="Git - CS50's Web Programming with Python and JavaScript"><link href="../../faviconb8b0.ico?1590121405" rel="icon">
+
+<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+<link href="../../assets/%40fortawesome/fontawesome-free/css/all.minb8b0.css?1590121405" rel="stylesheet">
+
+<link href="../../assets/pageb8b0.css?1590121405" rel="stylesheet">
+
+<!-- http://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
+<script src="../../assets/jquery/dist/jquery.minb8b0.js?1590121405"></script>
+<script src="../../assets/popper.js/dist/umd/popper.minb8b0.js?1590121405"></script>
+<script src="../../assets/bootstrap/dist/js/bootstrap.minb8b0.js?1590121405"></script>
+
+<!-- https://github.com/pellepim/jstimezonedetect -->
+<script src="../../assets/jstz.minb8b0.js?1590121405"></script>
+
+<!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+<script src="../../assets/moment.minb8b0.js?1590121405"></script>
+<script src="../../assets/moment-timezone-with-data.minb8b0.js?1590121405"></script>
+
+
+
+<script src="../../assets/jekyll-theme-cs50b8b0.js?1590121405"></script>
+
+<title>Git - CS50's Web Programming with Python and JavaScript</title>
+</head>
+
+    <body>
+
+        
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <aside class="col-md">
+ 
+                    <header><h1 data-id="cs50s-web-programming-with-python-and-javascript"><a href="../../index.html">CS50’s Web Programming with Python and JavaScript</a></h1>
+
+<p>OpenCourseWare</p>
+
+<p><a href="https://brianyu.me/">Brian Yu</a><br>
+<a href="mailto:brian@cs.harvard.edu">brian@cs.harvard.edu</a></p>
+
+<p><a href="https://cs.harvard.edu/malan/">David J. Malan</a><br>
+<a href="mailto:malan@harvard.edu">malan@harvard.edu</a><br>
+<a href="https://www.facebook.com/dmalan" class="pr-1"><i class="fab fa-facebook-f"></i></a>
+<a href="https://github.com/dmalan" class="pr-1"><i class="fab fa-github"></i></a>
+<a href="https://www.instagram.com/davidjmalan/" class="pr-1"><i class="fab fa-instagram"></i></a>
+<a href="https://www.linkedin.com/in/malan/" class="pr-1"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.quora.com/profile/David-J-Malan" class="pr-1"><i class="fab fa-quora"></i></a>
+<a href="https://twitter.com/davidjmalan" class="pr-1"><i class="fab fa-twitter"></i></a></p></header>
+
+                    
+
+                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside > nav" data-toggle="collapse">
+                        Menu
+                    </button>
+
+                    <nav class="collapse d-md-block" id="nav"><hr>
+
+<ol start="0">
+  <li><a href="../../index.html#git">Git</a></li>
+  <li><a href="../../index.html#html-css">HTML, CSS</a></li>
+  <li><a href="../../index.html#flask">Flask</a></li>
+  <li><a href="../../index.html#sql">SQL</a></li>
+  <li><a href="../../index.html#orms-apis">ORMs, APIs</a></li>
+  <li><a href="../../index.html#javascript">JavaScript</a></li>
+  <li><a href="../../index.html#front-ends">Front Ends</a></li>
+  <li><a href="../../index.html#django">Django</a></li>
+  <li><a href="../../index.html#testing-cicd">Testing, CI/CD</a></li>
+  <li><a href="../../index.html#github-travis-ci">GitHub, Travis CI</a></li>
+  <li><a href="../../index.html#scalability">Scalability</a></li>
+  <li><a href="../../index.html#security">Security</a></li>
+</ol>
+
+<hr>
+
+<p><a href="../../certificate/index.html">CS50 Certificate</a></p>
+
+<hr>
+
+<ul>
+  <li data-marker="*"><a href="https://cs50.harvard.edu/web/ed">Ed Discussion</a> for Q&amp;A</li>
+  <li data-marker="*" class="small"><a href="../../quickstart.pdf">Quick Start Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://cs50.edx.org/web">edX</a></li>
+  <li data-marker="*"><a href="https://itunes.apple.com/us/course/cs50s-web-programming-with-python-and-javascript/id1409824690">iTunes U</a></li>
+  <li data-marker="*"><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T382hIW-IsOVuXP1uMzEvmcE5">YouTube</a></li>
+</ul>
+
+<hr>
+
+<ul class="small">
+  <li data-marker="*"><a href="https://discord.gg/T8QZqRx">Discord</a></li>
+  <li data-marker="*"><a href="https://www.facebook.com/groups/cs50/">Facebook Group</a></li>
+  <li data-marker="*"><a href="https://www.facebook.com/cs50/">Facebook Page</a></li>
+  <li data-marker="*"><a href="https://instagram.com/cs50">Instagram</a></li>
+  <li data-marker="*"><a href="https://www.linkedin.com/groups/7437240/">LinkedIn Group</a></li>
+  <li data-marker="*"><a href="https://www.quora.com/topic/CS50">Quora</a></li>
+  <li data-marker="*"><a href="https://www.snapchat.com/add/cs50">Snapchat</a></li>
+  <li data-marker="*"><a href="https://twitter.com/cs50">Twitter</a></li>
+  <li data-marker="*"><a href="http://www.youtube.com/subscription_center?add_user=cs50tv">YouTube</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://cs50.harvardshop.com/"><img src="https://drive.google.com/uc?export=view&amp;id=1oWgwFDv5cvtev23emjNlZfK64MEOmVu9" alt="Harvard Shop"></a></p>
+
+<hr></nav>
+
+                    <footer><p><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="small">CC BY-NC-SA 4.0</a></p></footer>
+
+                </aside>
+
+                <main class="col-md markdown-body">
+
+                    <h1 id="git">Git</h1>
+
+<h2 id="git-and-github">Git and GitHub</h2>
+
+<ul>
+  <li data-marker="*">Git can keep track of changes made to code, synchronize code between different people, test changes to code without losing the original, and revert back to old versions of code.</li>
+  <li data-marker="*">GitHub is a website that stores Git repositories on the internet to facilitate the collaboration that Git allows for. A repository is simply a place to keep track of code and all the changes to code.</li>
+  <li data-marker="*">Git commands:
+    <ul>
+      <li data-marker="*"><code class="highlighter-rouge">git clone &lt;url&gt;</code> : take a repository stored on a server (like GitHub) and downloads it</li>
+      <li data-marker="*"><code class="highlighter-rouge">git add &lt;filename(s)&gt;</code> : add files to the staging area to be included in the next commit</li>
+      <li data-marker="*"><code class="highlighter-rouge">git commit -m "message"</code> : take a snapshot of the repository and save it with a message about the changes</li>
+      <li data-marker="*"><code class="highlighter-rouge">git commit -am &lt;filename(s)&gt; "message"</code> : add files and commit changes all in one</li>
+      <li data-marker="*"><code class="highlighter-rouge">git status</code> : print what is currently going on with the repository</li>
+      <li data-marker="*"><code class="highlighter-rouge">git push</code> : push any local changes (commits) to a remote server</li>
+      <li data-marker="*"><code class="highlighter-rouge">git pull</code> : pull any remote changes from a remote server to a local computer</li>
+      <li data-marker="*"><code class="highlighter-rouge">git log</code> : print a history of all the commits that have been made</li>
+      <li data-marker="*"><code class="highlighter-rouge">git reflog</code> : print a list of all the different references to commits</li>
+      <li data-marker="*"><code class="highlighter-rouge">git reset --hard &lt;commit&gt;</code> : reset the repository to a given commit</li>
+      <li data-marker="*"><code class="highlighter-rouge">git reset --hard origin/master</code> : reset the repository to its original state (e.g. the version cloned from GitHub)</li>
+    </ul>
+  </li>
+  <li data-marker="*">When combining different versions of code, e.g. using <code class="highlighter-rouge">git pull</code>, a merge conflict can occur if the different versions have different data in the same location. Git will try to take care of merging automatically, but if two users edit, for example, the same line, a merge conflict will have to be manually resolved.
+    <ul>
+      <li data-marker="*">To resolve a merge conflict, simply locally remove all lines and code that are not wanted and push the results.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="html">HTML</h2>
+
+<ul>
+  <li data-marker="*">HTML (HyperText Markup Language) is used to lay out the structure of a webpage.</li>
+  <li data-marker="*"><code class="highlighter-rouge"><span class="cp">&lt;!DOCTYPE html&gt;</span></code> is placed at the start of an HTML file to indicate to the browser that HTML5 is being used.</li>
+  <li data-marker="*">HTML is made up of tags. Tags generally come in pairs, with data being in between the tags. Generally, tags are indented to help visualize their hierarchy, but any indentation is purely stylistic. Tags can also have attributes, which are data fields, sometimes required and sometimes optional, that provide additional information to the browser about how to render the data.</li>
+  <li data-marker="*">Some common HTML tags:
+    <ul>
+      <li data-marker="*"><code class="highlighter-rouge"><span class="nt">&lt;html&gt;&lt;/html&gt;</span></code> : contents of website</li>
+      <li data-marker="*"><code class="highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code> : metadata about the page that is useful for the browser when displaying the page</li>
+      <li data-marker="*"><code class="highlighter-rouge">&lt;title&gt;&lt;/title&gt;</code> : title of the page</li>
+      <li data-marker="*"><code class="highlighter-rouge">&lt;body&gt;&lt;/body&gt;</code> : body of the page</li>
+      <li data-marker="*"><code class="highlighter-rouge">&lt;h1&gt;&lt;/h1&gt;</code> : header (h1 is the largest header, h6 is the smallest header)</li>
+      <li data-marker="*"><code class="highlighter-rouge">&lt;ul&gt;&lt;/ul&gt;</code> : unordered list</li>
+      <li data-marker="*"><code class="highlighter-rouge">&lt;ol&gt;&lt;/ol&gt;</code> : ordered list
+        <ul>
+          <li data-marker="*"><code class="highlighter-rouge">&lt;li&gt;&lt;/li&gt;</code> : list item (must be inside either <code class="highlighter-rouge">&lt;ul&gt;&lt;/ul&gt;</code> or <code class="highlighter-rouge">&lt;ol&gt;&lt;/ol&gt;</code>)</li>
+        </ul>
+      </li>
+      <li data-marker="*"><code class="highlighter-rouge">&lt;img src="path/to/img.jpg" height="200" width="300"&gt;</code> : image stored at <code class="highlighter-rouge">src</code> attribute, whcih can also be a URL
+        <ul>
+          <li data-marker="*">note that this is a single tag without an end tag</li>
+          <li data-marker="*">both <code class="highlighter-rouge">height</code> and <code class="highlighter-rouge">width</code> are optional (if one is omitted, the browser will auto-size the image), and can also take a percentage: <code class="highlighter-rouge">height=50%</code> to automatically scale the image to a certain portion of the page</li>
+        </ul>
+      </li>
+      <li data-marker="*"><code class="highlighter-rouge">&lt;table&gt;&lt;/table&gt;</code> : table
+        <ul>
+          <li data-marker="*"><code class="highlighter-rouge">&lt;th&gt;&lt;/th&gt;</code> : table header</li>
+          <li data-marker="*"><code class="highlighter-rouge">&lt;tr&gt;&lt;/tr&gt;</code> : table row</li>
+          <li data-marker="*"><code class="highlighter-rouge">&lt;td&gt;&lt;/td&gt;</code> : table data (cell)</li>
+        </ul>
+      </li>
+      <li data-marker="*"><code class="highlighter-rouge">&lt;form&gt;&lt;/form&gt;</code> : form that can be filled out and submitted by the user
+        <ul>
+          <li data-marker="*"><code class="highlighter-rouge">&lt;input type="text" placeholder="Full Name" name="name"&gt;</code> : input field
+            <ul>
+              <li data-marker="*"><code class="highlighter-rouge">type</code> indicates the type of data</li>
+              <li data-marker="*"><code class="highlighter-rouge">placeholder</code> is the greyed-out text shown before the field is filled</li>
+              <li data-marker="*"><code class="highlighter-rouge">name</code> is an identifier for the input field</li>
+            </ul>
+          </li>
+          <li data-marker="*"><code class="highlighter-rouge">&lt;button&gt;&lt;/button&gt;</code> : button used to submit form</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li data-marker="*">The Document Object Model is a way to conceptualize webpages by representing them as a interconnected hierarchy of nodes. In HTML, the nodes of the DOM would be the different tags and their contained data, with the <code class="highlighter-rouge"><span class="nt">&lt;html&gt;&lt;/html&gt;</span></code> tag being at the very top of the tree. While this might seem a little unintuitive at first, this model will become very useful in the future.</li>
+</ul>
+
+<h2 id="css">CSS</h2>
+
+<ul>
+  <li data-marker="*">CSS (Cascading Style Sheets) is a language used to interact with and style HTML, changing the way it looks according to a series of rules. CSS is what makes websites look nice.</li>
+  <li data-marker="*">CSS can be applied to HTML in a variety of ways:
+    <ul>
+      <li data-marker="*">The <code class="highlighter-rouge">style</code> attribute: <code class="highlighter-rouge">&lt;h5 style="color:blue;text-align:center;"&gt;&lt;/h5&gt;</code>
+        <ul>
+          <li data-marker="*">The semicolon-separated CSS properties passed to <code class="highlighter-rouge">style</code> will be applied to whatever the tag containts.</li>
+        </ul>
+      </li>
+      <li data-marker="*">The <code class="highlighter-rouge">&lt;style&gt;&lt;/style&gt;</code> tags:
+  ```html</li>
+    </ul>
+    
+      <style>
+          h5, h6 {
+              color: blue;
+              text-align: center;
+          }
+      </style>
+  
+    <p>```
+      * This is a useful paradigm to use when reusing the same styling many times throughout a page. The properties listed will apply to all of the tags that are listed.</p>
+    <ul>
+      <li data-marker="*">A separate <code class="highlighter-rouge">.css</code> file: add <code class="highlighter-rouge">&lt;link rel="stylesheet" href="path/to/styles.css"&gt;</code> to the header, and move the CSS code (same format as used inside the <code class="highlighter-rouge">&lt;style&gt;&lt;/style&gt;</code> tags.
+        <ul>
+          <li data-marker="*">This is often an even better paradigm because it separates two distinctly different things: structure (HTML) and style (CSS), while also being easier to manage and read.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li data-marker="*">Some common CSS properties (those that take arguments in pixels often can take a percentage or simply <code class="highlighter-rouge">auto</code>):
+    <ul>
+      <li data-marker="*"><code class="highlighter-rouge">color: blue</code>, <code class="highlighter-rouge">color: #0c8e05</code> : can be 1 of ~140 named colors, or a hexadecimal value that represents an RGB value</li>
+      <li data-marker="*"><code class="highlighter-rouge">text-align: left</code> : aligns text to <code class="highlighter-rouge">left</code>; other possible arguments are <code class="highlighter-rouge">center</code>, <code class="highlighter-rouge">right</code>, or <code class="highlighter-rouge">justify</code></li>
+      <li data-marker="*"><code class="highlighter-rouge">background-color: teal</code> : sets the background to a color, which is the same format as the <code class="highlighter-rouge">color</code> property</li>
+      <li data-marker="*"><code class="highlighter-rouge">height: 150px</code> : sets the height of an area</li>
+      <li data-marker="*"><code class="highlighter-rouge">width: 150px</code> : sets the width of an area</li>
+      <li data-marker="*"><code class="highlighter-rouge">margin: 30px</code> : sets the margin around all four sides of an area
+        <ul>
+          <li data-marker="*">can also be broken up into <code class="highlighter-rouge">margin-left</code>, <code class="highlighter-rouge">margin-right</code>, <code class="highlighter-rouge">margin-top</code>, and <code class="highlighter-rouge">margin-bottom</code></li>
+        </ul>
+      </li>
+      <li data-marker="*"><code class="highlighter-rouge">padding: 20px</code> : sets the padding around text inside an area
+        <ul>
+          <li data-marker="*">can be broken up the same way as <code class="highlighter-rouge">margin</code></li>
+        </ul>
+      </li>
+      <li data-marker="*"><code class="highlighter-rouge">font-family: Arial, sans-serif</code> : sets the font family to be used
+        <ul>
+          <li data-marker="*">a comma-separated list provides alternatives in case a browser doesn’t support a specific font</li>
+          <li data-marker="*">generic families such as <code class="highlighter-rouge">sans-serif</code> will use browser defaults</li>
+        </ul>
+      </li>
+      <li data-marker="*"><code class="highlighter-rouge">font-size: 28px</code> : sets the font size</li>
+      <li data-marker="*"><code class="highlighter-rouge">font-weight: bold</code>: sets the font weight to quality, a relative measure (<code class="highlighter-rouge">lighter</code>), or a number (<code class="highlighter-rouge">200</code>)</li>
+      <li data-marker="*"><code class="highlighter-rouge">border: 3px solid blue</code>: sets a border around an area</li>
+    </ul>
+  </li>
+  <li data-marker="*">There are lots of CSS properties that can be used in a lot of different ways. Check out the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">wonderfully extensive documentation</a> for more information.</li>
+</ul>
+
+<h2 id="sectioning-with-html-and-css">Sectioning with HTML and CSS</h2>
+
+<ul>
+  <li data-marker="*">Two special tags allow us to break up a our webpage into sections:
+    <ul>
+      <li data-marker="*"><code class="highlighter-rouge">&lt;div&gt;&lt;/div&gt;</code> : vertical division of a webpage</li>
+      <li data-marker="*"><code class="highlighter-rouge">&lt;span&gt;&lt;/span&gt;</code> : section of a webpage inside, for example, text</li>
+    </ul>
+  </li>
+  <li data-marker="*">Both <code class="highlighter-rouge">&lt;div&gt;&lt;/div&gt;</code> and <code class="highlighter-rouge">&lt;span&gt;&lt;/span&gt;</code> don’t really do much by themselves, but they allow for the labelling of sections of a webpage..</li>
+  <li data-marker="*">Different sections of a webpage can be referenced with the <code class="highlighter-rouge">id</code> and <code class="highlighter-rouge">class</code> attributes. <code class="highlighter-rouge">id</code>s uniquely identify elements, but there can be an arbitary number of elements with a given <code class="highlighter-rouge">class</code>.</li>
+  <li data-marker="*"><code class="highlighter-rouge">id</code>s can be referenced in CSS with <code class="highlighter-rouge">#id</code> and <code class="highlighter-rouge">class</code>es can be referenced with <code class="highlighter-rouge">.class</code>. <code class="highlighter-rouge">id</code>s and <code class="highlighter-rouge">class</code>es, therefore, can be used to style the same types of areas (3 different <code class="highlighter-rouge">&lt;div&gt;&lt;/div&gt;</code>, for example) in different ways.</li>
+</ul>
+
+<h2 id="github-pages">GitHub Pages</h2>
+
+<ul>
+  <li data-marker="*">GitHub Pages is a feature of GitHub which allows for a repository to be deployed to the internet.</li>
+  <li data-marker="*">Simply scroll to <strong>GitHub Pages</strong> under <strong>Settings</strong>, select the <strong>master branch</strong>, and click <strong>save</strong>.</li>
+  <li data-marker="*">By default, the repository will be deployed to username.github.io/repository.</li>
+  <li data-marker="*">GitHub Pages is automatically updated when the repository is updated.</li>
+</ul>
+
+
+                </main>
+
+            </div>
+
+        </div>
+
+        
+ 
+    
+
+
+</body>
+<!-- Mirrored from cs50.harvard.edu/web/2018/notes/0/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 May 2020 07:07:59 GMT -->
+</html>
