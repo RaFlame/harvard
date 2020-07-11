@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png">
+  <title>Google</title>
+  <style>
+    body {
+      height: 100%;
+      margin: 0;
+    }
+    div#viewport {
+      font-family: arial,sans-serif;
+      color: #f01d1d;
+      font-size: small;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    #viewport {
+      min-height: 100%;
+    }
+    .ctr-p {
+      margin: 0 auto;
+      min-width: 980px;
+    }
+    div#searchform.jhp {
+      margin-top: 0;
+    }
+    .hp #searchform {
+      position: absolute;
+      top: 311px;
+    }
+    div#searchform {
+      min-width: 980px;
+      z-index: 103;
+    }
+    #searchform {
+      width: 100%;
+    }
+    .jhp>#tsf {
+      max-width: none;
+    }
+    .hp #tsf {
+      margin: 0 auto;
+      width: 833px;
+    }
+    .A8SBwf {
+      position: relative;
+      margin: 0 auto;
+      padding-top: 6px;
+      width: 484px;
+    }
+    .RNNXgb {
+      background: #fff;
+      display: flex;
+      border: 1px solid #dfe1e5;
+      box-shadow: none;
+      border-radius: 24px;
+      z-index: 3;
+      height: 44px;
+      margin: 0 auto;
+      width: 482px;
+    }
+    .SDkEP {
+      flex: 1;
+      display: flex;
+      padding: 5px 8px 0 16px;
+      padding-left: 14px;
+    }
+    .iblpc {
+      display: flex;
+      align-items: center;
+      padding-right: 13px;
+      margin-top: -5px;
+    }
+    .hsuHs {
+      margin: auto;
+    }
+    .wFncld {
+      margin-top: 3px;
+      color: #9AA0A6;
+      height: 20px;
+      width: 20px;
+    }
+    .z1asCe {
+      display: inline-block;
+      fill: currentColor;
+      line-height: 24px;
+      position: relative;
+    }
+    .a4bIc {
+      display: flex;
+      flex: .92;
+      flex-wrap: wrap;
+    }
+    .pR49Ae {
+      color: transparent;
+      flex: 100%;
+      white-space: pre;
+    }
+    .gsfi {
+      font: 16px arial,sans-serif;
+      line-height: 34px;
+      height: 34px !important;
+    }
+    .gLFyf {
+      font: 16px arial,sans-serif;
+      line-height: 34px;
+      height: 34px !important;
+      background-color: transparent;
+      border: none;
+      margin: 0;
+      padding: 0;
+      color: rgba(0,0,0,.87);
+      word-wrap: break-word;
+      outline: none;
+      display: flex;
+      flex: 100%;
+      -webkit-tap-highlight-color: transparent;
+      margin-top: -37px;
+      font-size: 16px;
+    }
+    .dRYYxd {
+      display: flex;
+      flex: 0 0 auto;
+      margin-top: -5px;
+      align-items: stretch;
+      flex-direction: row;
+    }
+    .J9leP {
+      flex: 1 0 auto;
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      border: 0;
+      background: transparent;
+      outline: none;
+      padding: 0 8px;
+      width: 24px;
+      line-height: 44px;
+    }
+    .hOoLGe {
+      background: url('https://www.gstatic.com/inputtools/images/tia.png')
+      height: 24px;
+      width: 24px;
+      vertical-align: middle;
+    }
+    .dQuYle {
+      visibility: hidden;
+    }
+    .hpuQDe {
+      flex: 1 0 auto;
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      border: 0;
+      background: transparent;
+      outline: none;
+      padding: 0 8px;
+      width: 24px;
+      line-height: 44px;
+    }
+    .HPVvwb {
+      background: url('//www.gstatic.com/images/branding/googlemic/2x/googlemic_color_24dp.png') 0 0 no-repeat;
+      background-size: 24px;
+      height: 24px;
+      width: 24px;
+      vertical-align: middle;
+    }
+    .tfB0Bf {
+      height: 70px;
+    }
+    .FPdoLc {
+      padding-top: 18px;
+      top: 53px;
+      z-index: 0;
+      position: absolute;
+      width: 487px;
+    }
+    .tfB0Bf input[type="submit"] {
+      background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+      background-color: #f2f2f2;
+      border: 1px solid #f2f2f2;
+      border-radius: 4px;
+      color: #5F6368;
+      font-family: arial,sans-serif;
+      font-size: 14px;
+      margin: 11px 4px;
+      padding: 0 16px;
+      line-height: 27px;
+      height: 36px;
+      min-width: 54px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    center {
+      display: block;
+      text-align: -webkit-center;
+    }
+    .gNO89b {
+      background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+      background-color: #f2f2f2;
+      border: 1px solid #f2f2f2;
+      border-radius: 4px;
+      color: #5F6368;
+      font-family: arial,sans-serif;
+      font-size: 14px;
+      margin: 11px 4px;
+      padding: 0 16px;
+      line-height: 27px;
+      height: 36px;
+      min-width: 54px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .content {
+      padding-bottom: 35px;
+    }
+    #body {
+      display: block;
+    }
+    div#lga{
+      height:233px;
+      margin-top:89px
+    }
+    .appbar {
+    color: #d93025;
+    font-size: 20px;
+    margin: 25px 35px;
+}
+.PLLUQc {
+    padding-right: 16px;
+    float: left;
+    display: inline-block;
+    min-width: 167px;
+    min-height: 41px;
+    vertical-align: middle;
+    width: 50%;
+}
+  </style>
+</head>
+
+<body class="hp">
+  <div id="viewport" class="ctr-p">
+    <div id="searchform" class="jhp">
+      <form id="tsf" class="tsf nj" action="/search" style="overflow:visible" data-submitfalse="q" method="GET" name="f" role="search">
+        <div jsmodel="vWNDde">
+          <div class="A8SBwf">
+            <div class="RNNXgb">
+              <div class="SDkEP">
+                <div class="iblpc">
+                  <div class="hsuHs">
+                    <span class="wFncld z1asCe MZy1Rb"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                      </svg></span>
+                  </div>
+                </div>
+                <div class="a4bIc">
+                  <div class="pR49Ae gsfi"></div>
+                  <input class="gLFyf gsfi" maxlength="2048" name="q" type="text" aria-autocomplete="both" autocapitalize="off" autocomplete="off" autocorrect="off" autofocus="" role="combobox" spellcheck="false" title="Pesquisar" value="" aria-label="Pesquisar">
+                </div>
+                <div class="dRYYxd">
+                  <div class="J9leP">
+                    <div class="hOoLGe">
+                      <img class="dQuYle" src="https://www.google.com/tia/tia.png" tia_disable_swap="true" tia_field_name="q">
+                    </div>
+                    <div class="hpuQDe">
+                      <span class="HPVvwb"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="FPdoLc tfB0Bf">
+              <center>
+                <input class="gNO89b" value="Pesquisa Google" aria-label="Pesquisa Google" name="btnK" type="submit">
+                <input class="RNmpXc" value="Estou com sorte" aria-label="Estou com sorte" name="btnI" type="submit">
+              </center>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="main" class="content">
+      <span class="ctr-p" id="body">
+        <center>
+          <div id="lga">
+            <img alt="Google" height="92" id="hplogo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" style="padding-top:109px" width="272">
+          </div>
+        </center>
+      </span>
+    </div>
+  </div>
+</body>
+
+</html>
