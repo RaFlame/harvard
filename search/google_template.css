@@ -11,6 +11,9 @@
       height: 100%;
       margin: 0;
     }
+    nav{
+      float: right;
+    }
     div#viewport {
       font-family: arial,sans-serif;
       color: #f01d1d;
@@ -40,6 +43,9 @@
     #searchform {
       width: 100%;
     }
+    .style {
+    text:right;
+}
     .jhp>#tsf {
       max-width: none;
     }
@@ -231,7 +237,7 @@
     .appbar {
     color: #d93025;
     font-size: 20px;
-    margin: 25px 35px;
+    margin: 0px;
 }
 .PLLUQc {
     padding-right: 16px;
@@ -241,6 +247,9 @@
     min-height: 41px;
     vertical-align: middle;
     width: 50%;
+}
+.container_advanced {
+  float: left;
 }
   </style>
 </head>
